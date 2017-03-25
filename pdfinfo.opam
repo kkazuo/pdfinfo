@@ -1,0 +1,24 @@
+opam-version: "1.2"
+version: "1.0.0"
+maintainer: "obiwanko@me.com"
+authors: ["Koga Kazuo <obiwanko@me.com>"]
+homepage:    "https://github.com/kkazuo/pdfinfo"
+bug-reports: "https://github.com/kkazuo/pdfinfo/issues"
+dev-repo:    "https://github.com/kkazuo/pdfinfo.git"
+license: "MIT"
+build: [
+  ["jbuilder" "build" "--only-packages" "pdfinfo" "--root" "." "-j" jobs "@install"]
+]
+depends: [
+  "base"
+  "stdio"
+  "ppx_pipebang"
+  "ppx_sexp_conv"
+  "jbuilder" {build & >= "1.0+beta5"}
+]
+available: [ ocaml-version >= "4.03.0" ]
+descr: "
+pdfinfo library for OCaml
+
+A wrapper around the pdfinfo command (for collecting PDF file info).
+"
